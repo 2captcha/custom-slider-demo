@@ -26,7 +26,7 @@ export APIKEY=your_api_key_here
 
 ### Code
 
-As we use ES6 `import` statements in the code, let's add the following property to `package.json` file:
+As we use ES6 `import` statements in the code, let's add the following property to the `package.json` file:
 
 ```json
 "type": "module"
@@ -94,7 +94,7 @@ while (!success) {
 
 Then we need to grab the captcha image and send it to 2Captcha API using the [Coordinates](https://2captcha.com/api-docs/coordinates) method. There's a chance that the image will fail to load, so we check the length of the data URL returned.
 
-Once we have the image, we pass it to the corresponding method of `Solver` instance.
+Once we have the image, we pass it to the corresponding method of the `Solver` instance.
 The result contains an array of point coordinates. In our case, there should be only one point. We use its `x` coordinate as a distance between the left image border and the center of the target puzzle piece.
 
 ```js
@@ -134,7 +134,7 @@ const target = {
 }
 ```
 
-Optionally we can draw a small box on the image to see the exact point clicked by 2Captcha worker
+Optionally we can draw a small box on the image to see the exact point clicked by the 2Captcha worker
 
 ```js
 await page.evaluate((coord) => {
@@ -161,7 +161,7 @@ await page.mouse.move(target.x, target.y, {
 await page.mouse.up()
 ```
 
-Finally, we are trying to understand if we were able to bypass the captcha. In our case after the solution we are redirected to another page, so we are waiting for navigation. In the case of a successful solution, we exit the loop setting `success` variable to `true`, [reporting a correct answer](https://2captcha.com/api-docs/report-correct) to 2Captcha API, making a screenshot and closing the page and browser. In case of error (no navigation within 5 seconds) we [report an incorrect answer](https://2captcha.com/api-docs/report-incorrect) and make one more attempt to solve the captcha.
+Finally, we are trying to understand if we were able to bypass the captcha. In our case after the solution we are redirected to another page, so we are waiting for navigation. In the case of a successful solution, we exit the loop setting the `success` variable to `true`, [reporting a correct answer](https://2captcha.com/api-docs/report-correct) to 2Captcha API, making a screenshot and closing the page and browser. In case of error (no navigation within 5 seconds) we [report an incorrect answer](https://2captcha.com/api-docs/report-incorrect) and make one more attempt to solve the captcha.
 
 ```js
 try {
@@ -179,7 +179,7 @@ try {
 }
 ```
 
-As you may be noticed, the code starting from interaction with 2Captcha API is wrapped into `try/catch` block, so we need to close this block with `catch` as well as close our loop here.
+As you may have noticed, the code starting from interaction with 2Captcha API is wrapped into a `try/catch` block, so we need to close this block with the `catch` as well as close our loop here.
 
 ```js
     } catch (e) {
