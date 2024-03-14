@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "node index.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "2captcha-ts": "^2.3.3",
+    "puppeteer": "^22.3.0"
+  }
+}
