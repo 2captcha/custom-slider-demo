@@ -4,7 +4,7 @@
   },
   "type": "module",
   "dependencies": {
-    "2captcha-ts": "^2.3.3",
+    "@2captcha/captcha-solver": "^1.0.0",
     "puppeteer": "^22.3.0"
   }
 }

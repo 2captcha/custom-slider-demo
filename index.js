@@ -1,5 +1,5 @@
 import puppeteer from 'puppeteer'
-import { Solver } from '2captcha-ts'
+import { Solver } from '@2captcha/captcha-solver'
 import { readFile } from 'node:fs/promises'
 
 const solver = new Solver(process.env.APIKEY)
