@@ -8,14 +8,14 @@ To solve the custom slider captcha we need to calculate the path where we should
 
 ## Approach
 
-To interact with the captcha we must use a browser and a framework that allows us to control the browser. In this example, we'll use [Puppeteer](https://pptr.dev/) as a browser automation framework. And we'll also use [2captcha-ts](https://www.npmjs.com/package/2captcha-ts) to interact with 2Captcha API.
+To interact with the captcha we must use a browser and a framework that allows us to control the browser. In this example, we'll use [Puppeteer](https://pptr.dev/) as a browser automation framework. And we'll also use [@2captcha/captcha-solver](https://www.npmjs.com/package/@2captcha/captcha-solver) to interact with 2Captcha API.
 
 ### Prepare the environment
 
 Install the dependencies:
 
 ```sh
-yarn add puppeteer 2captcha-ts
+yarn add puppeteer @2captcha/captcha-solver
 ```
 
 Set the API key as an environment variable:
@@ -38,7 +38,7 @@ First of all, let's import the dependencies
 
 ```js
 import puppeteer from 'puppeteer'
-import { Solver } from '2captcha-ts'
+import { Solver } from '@2captcha/captcha-solver'
 import { readFile } from 'node:fs/promises'
 ```
 
